@@ -1,0 +1,16 @@
+<header class="topbar">
+  <a class="wordmark" href="#home" aria-label="Home page">WA<span>.</span></a>
+  <button class="menu-toggle" type="button" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation" (click)="menuOpen = !menuOpen">
+    <span></span><span></span>
+  </button>
+  <nav [class.open]="menuOpen" aria-label="Main navigation">
+    <a href="#home" (click)="menuOpen = false">Home</a>
+    <a href="#about" (click)="menuOpen = false">About</a>
+    <a href="#projects" (click)="menuOpen = false">Projects</a>
+    <a href="#contact" (click)="menuOpen = false">Contact</a>
+    <a class="nav-cta" href="#contact" (click)="menuOpen = false">Let’s talk <span>↗</span></a>
+    <button class="theme-toggle" type="button" [attr.aria-label]="'Switch to ' + (isLight ? 'dark' : 'light') + ' theme'" (click)="toggleTheme()">
+      <span>{{ isLight ? '☾' : '☼' }}</span>{{ isLight ? 'DARK' : 'LIGHT' }}
+    </button>
+  </nav>
+</header>
