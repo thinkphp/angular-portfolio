@@ -21,6 +21,13 @@ export class HeaderComponent implements OnInit {
     this.applyTheme();
   }
 
+  navigateTo(event: MouseEvent, sectionId: string): void {
+    event.preventDefault();
+    this.menuOpen = false;
+    history.replaceState(null, '', `${location.pathname}${location.search}#${sectionId}`);
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   private applyTheme(): void {
     const theme = this.isLight ? 'light' : 'dark';
     document.documentElement.dataset['theme'] = theme;

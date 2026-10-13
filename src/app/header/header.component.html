@@ -4,11 +4,11 @@
     <span></span><span></span>
   </button>
   <nav [class.open]="menuOpen" aria-label="Main navigation">
-    <a href="#home" (click)="menuOpen = false">Home</a>
-    <a href="#about" (click)="menuOpen = false">About</a>
-    <a href="#projects" (click)="menuOpen = false">Projects</a>
-    <a href="#contact" (click)="menuOpen = false">Contact</a>
-    <a class="nav-cta" href="#contact" (click)="menuOpen = false">Let’s talk <span>↗</span></a>
+    <a href="#home" (click)="navigateTo($event, 'home')">Home</a>
+    <a href="#about" (click)="navigateTo($event, 'about')">About</a>
+    <a href="#projects" (click)="navigateTo($event, 'projects')">Projects</a>
+    <a href="#contact" (click)="navigateTo($event, 'contact')">Contact</a>
+    <a class="nav-cta" href="#contact" (click)="navigateTo($event, 'contact')">Let’s talk <span>↗</span></a>
     <button class="theme-toggle" type="button" [attr.aria-label]="'Switch to ' + (isLight ? 'dark' : 'light') + ' theme'" (click)="toggleTheme()">
       <span>{{ isLight ? '☾' : '☼' }}</span>{{ isLight ? 'DARK' : 'LIGHT' }}
     </button>
